@@ -38,17 +38,18 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) 
 {
-  TreeMap* treeMap = (TreeMap *) malloc(sizeof(treeMap));   
+  TreeMap* treeMap = (TreeMap *) malloc(sizeof(TreeMap));   
   
-  treeMap -> root = NULL;
-  treeMap -> lower_than = lower_than;
+  treeMap->root = NULL;
+  treeMap->lower_than = lower_than;
 
   return treeMap;
 }
 
 
-void insertTreeMap(TreeMap * tree, void* key, void * value) {
-
+void insertTreeMap(TreeMap * tree, void* key, void * value) 
+{
+  
 }
 
 TreeNode * minimum(TreeNode * x){
