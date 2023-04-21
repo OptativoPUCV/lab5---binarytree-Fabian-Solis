@@ -91,3 +91,29 @@ treemap.c:41:34: note: referencing an object of size 8 allocated by ‘malloc’
 cc1: all warnings being treated as errors
 Compilation failed
 f99cf0e
+Fri 21 Apr 2023 07:31:20 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:43:11: error: array subscript ‘TreeMap[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   43 |   treeMap -> root = NULL;
+      |           ^~
+treemap.c:41:34: note: referencing an object of size 8 allocated by ‘malloc’
+   41 |   TreeMap *treeMap = (TreeMap *) malloc(sizeof(treeMap));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:44:11: error: array subscript ‘TreeMap[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   44 |   treeMap -> current = NULL;
+      |           ^~
+treemap.c:41:34: note: referencing an object of size 8 allocated by ‘malloc’
+   41 |   TreeMap *treeMap = (TreeMap *) malloc(sizeof(treeMap));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:45:11: error: array subscript ‘TreeMap[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   45 |   treeMap -> lower_than = lower_than;
+      |           ^~
+treemap.c:41:34: note: referencing an object of size 8 allocated by ‘malloc’
+   41 |   TreeMap *treeMap = (TreeMap *) malloc(sizeof(treeMap));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fcc04fd
