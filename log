@@ -8,3 +8,13 @@ treemap.c:41:32: error: expected expression before ‘)’ token
       |                                ^
 Compilation failed
 a902631
+Fri 21 Apr 2023 07:28:09 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:33: error: expected expression before ‘)’ token
+   41 |   TreeMap *treeMap = ((treeMap *) malloc(sizeof(treemap)));
+      |                                 ^
+Compilation failed
+d3e7405
