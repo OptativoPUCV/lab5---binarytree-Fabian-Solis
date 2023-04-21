@@ -1,0 +1,10 @@
+Fri 21 Apr 2023 07:27:07 PM UTC: 
+ treemap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:32: error: expected expression before ‘)’ token
+   41 |   TreeMap *treeMap = (treeMap *) malloc(sizeof(treemap));
+      |                                ^
+Compilation failed
+a902631
