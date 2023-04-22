@@ -144,5 +144,6 @@ Pair * nextTreeMap(TreeMap * tree)
     tree->current = parent;
     return tree->current->pair;
   }
-    
+  
+  return NULL;
 }
