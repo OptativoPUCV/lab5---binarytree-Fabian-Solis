@@ -129,7 +129,19 @@ Pair * nextTreeMap(TreeMap * tree)
     return tree->current->pair;
   }
 
+  TreeNode* parent = tree->current->parent;
   
+  while(parent != NULL && tree->current == parent->right) 
+  {
+    tree->current = parent;
+    parent = parent->parent;
+  }
+
+  if(parent != NULL) 
+  {
+    tree->current = parent;
+    return tree->current->pair;
+  }
   
   return NULL;
 }
