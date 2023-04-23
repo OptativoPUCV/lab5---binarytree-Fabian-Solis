@@ -119,7 +119,7 @@ Pair * firstTreeMap(TreeMap * tree)
 {
   TreeNode* current = tree->root;
   
-  current = minimum(current)
+  current = minimum(current);
   tree->current = current;
   
   return current->pair;
