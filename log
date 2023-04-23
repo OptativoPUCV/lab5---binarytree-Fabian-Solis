@@ -430,3 +430,14 @@ Sun 23 Apr 2023 03:58:20 AM UTC:
  tests:  29|0
 total_score: 70/70
 b751567
+Sun 23 Apr 2023 03:58:38 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:147:6: error: ‘menorNodo’ undeclared (first use in this function)
+  147 |   if(menorNodo != NULL)
+      |      ^~~~~~~~~
+treemap.c:147:6: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+d3d1ccd
