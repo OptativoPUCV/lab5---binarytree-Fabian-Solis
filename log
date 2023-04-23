@@ -441,3 +441,9 @@ treemap.c:147:6: error: ‘menorNodo’ undeclared (first use in this function)
 treemap.c:147:6: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 d3d1ccd
+Sun 23 Apr 2023 03:58:58 AM UTC: 
+ treemap.c | 6 ------
+ 1 file changed, 6 deletions(-)
+ tests:  28|1
+total_score: 65/70
+99e63f6

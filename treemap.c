@@ -142,13 +142,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
     }
   }
   
-
   
-  if(menorNodo != NULL) 
-  {
-    node->pair->key = menorNodo->pair->key;
-    node->pair->value = menorNodo->pair->value;
-  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
