@@ -136,7 +136,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
   
   if(minorNode != NULL) {
     node->pair->key = minorNode->pair->key;
-    node->pair->value = minorNode->pair->value
+    node->pair->value = minorNode->pair->value;
   }
 
   removeNode(tree, minorNode);
