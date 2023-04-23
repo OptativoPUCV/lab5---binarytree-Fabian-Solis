@@ -94,63 +94,7 @@ TreeNode * minimum(TreeNode * x)
 
 void removeNode(TreeMap * tree, TreeNode* node) 
 {
-    if(node == NULL) return;
-
-  if (node->left == NULL && node->right == NULL)
-  {
-    if (node->parent == NULL) {
-      tree->root = NULL;
-    } 
-    if(node->parent->right == node) {
-      node->parent->right = NULL;
-    } else if (node->parent->left == node) {
-      node->parent->left = NULL;
-    }
-  }
-
-  if((node->left != NULL && node->right == NULL) || (node->left == NULL && node->right != NULL)) {
-
-    if(node->parent == NULL) {
-      
-      if(node->left != NULL) {
-        tree->root = node->left;
-      } else {
-        tree->root = node->right;
-      }
-    }
     
-    if(node->left != NULL) {
-      if(node->parent->right == node) {
-        node->parent->right = node->left;
-        node->left->parent = node->parent;
-        
-      } else if (node->parent->left == node) {
-        node->parent->left = node->left;
-        node->left->parent = node->parent;
-      }
-      
-    } else if (node->right != NULL) {
-      if(node->parent->right == node) {
-        node->parent->right = node->right;
-        node->right->parent = node->parent;
-      } else if (node->parent->left == node) {
-        node->parent->left = node->right;
-        node->right->parent = node->parent;
-      }
-    }
-  }
-  
-  
-  TreeNode* menorNodo = minimum(node->right);
-  
-  if(menorNodo != NULL) {
-    node->pair->key = menorNodo->pair->key;
-    node->pair->value = menorNodo->pair->value;
-  }
- 
-
-  removeNode(tree, menorNodo);
-  
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
@@ -182,7 +126,31 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 
 Pair * upperBound(TreeMap * tree, void* key) 
 {
+  TreeNode* auxNode = tree->root;
+  TreeNode* upperNode = NULL;
+  
+  while (auxNode != NULL) 
+  {
+    if (is_equal(tree, key, auxNode->pair->key) == 1 ) 
+    {
+      upperNode = auxNode;
+      return upperNode->pair;
+      
+    } 
+    else if (tree->lower_than(key,auxNode->pair->key) == 0) 
+    {
+      auxNode = auxNode->right;
+    } 
+    else if (tree->lower_than(key,auxNode->pair->key) == 1) 
+    {
+      upperNode = auxNode;
+      auxNode = auxNode->left;
+    }
+  }
+  
 
+    
+  return NULL;
 }
 
 Pair * firstTreeMap(TreeMap * tree) 
